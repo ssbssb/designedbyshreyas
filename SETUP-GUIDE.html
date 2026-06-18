@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide - Shreya Shake Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            color: #d4ff00;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            color: #00d4ff;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 255, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #d4ff00;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #00d4ff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .step {
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .step strong {
+            color: #d4ff00;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d4ff00;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        a.btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #d4ff00;
+            color: #0a0e27;
+        }
+        
+        .btn-primary:hover {
+            background: #b3cc00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 255, 0, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+        
+        .btn-secondary:hover {
+            background: #00d4ff;
+            color: #0a0e27;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .feature strong {
+            color: #d4ff00;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .success {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .file-list {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        
+        .file-list li {
+            list-style: none;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(212, 255, 0, 0.1);
+        }
+        
+        .file-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .file-list li::before {
+            content: "📄 ";
+            margin-right: 10px;
+            color: #d4ff00;
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(212, 255, 0, 0.2);
+            margin-top: 40px;
+            color: #a0aec0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .button-group { flex-direction: column; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Shreya Shake Portfolio</h1>
+        <p class="subtitle">Complete Setup Guide & Quick Start</p>
+        
+        <div class="section">
+            <h2>✨ What's Included</h2>
+            <ul class="file-list">
+                <li><strong>index.html</strong> - Complete portfolio website</li>
+                <li><strong>styles.css</strong> - Professional styling (800+ lines)</li>
+                <li><strong>script.js</strong> - Interactive features & animations</li>
+                <li><strong>README.md</strong> - Full documentation</li>
+                <li><strong>SETUP-GUIDE.html</strong> - This file</li>
+            </ul>
+            
+            <h3>✅ Features</h3>
+            <div class="feature-grid">
+                <div class="feature">
+                    <span>📱</span>
+                    <strong>Responsive</strong>
+                    Mobile, tablet & desktop
+                </div>
+                <div class="feature">
+                    <span>🖼️</span>
+                    <strong>Professional Images</strong>
+                    Unsplash integration
+                </div>
+                <div class="feature">
+                    <span>⚡</span>
+                    <strong>Interactive</strong>
+                    Smooth animations
+                </div>
+                <div class="feature">
+                    <span>🎯</span>
+                    <strong>Optimized</strong>
+                    Fast loading
+                </div>
+                <div class="feature">
+                    <span>🔧</span>
+                    <strong>Easy to Customize</strong>
+                    Simple HTML/CSS
+                </div>
+                <div class="feature">
+                    <span>🚀</span>
+                    <strong>Ready to Deploy</strong>
+                    No build needed
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🚀 Quick Start (3 Steps)</h2>
+            
+            <div class="step">
+                <strong>Step 1: Open the Website</strong><br>
+                Double-click <code>index.html</code> to open in your browser
+            </div>
+            
+            <div class="step">
+                <strong>Step 2: Explore & Test</strong><br>
+                Click through sections, test the form, check responsiveness on mobile
+            </div>
+            
+            <div class="step">
+                <strong>Step 3: Customize</strong><br>
+                Edit HTML content and CSS colors to match your brand
+            </div>
+            
+            <div class="success">
+                ✅ That's it! Your portfolio is ready to use.
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📝 How to Customize</h2>
+            
+            <h3>1. Update Your Information</h3>
+            <p>Edit these files with a text editor (Notepad, VS Code, etc.):</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li><strong>Name:</strong> Change "SHREYA SHAKE" to your name (in index.html)</li>
+                <li><strong>Bio:</strong> Update the hero section text</li>
+                <li><strong>Experience:</strong> Edit the 4 timeline cards</li>
+                <li><strong>Email:</strong> Update contact information</li>
+                <li><strong>Social Links:</strong> Add your real social media URLs</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px;">2. Change Images</h3>
+            <p>Replace these image URLs with your own (or use Unsplash links):</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Profile image (Hero section)</li>
+                <li>Design philosophy image (About section)</li>
+                <li>Project images (Exhibits section)</li>
+            </ul>
+            
+            <h3 style="margin-top: 20px;">3. Modify Colors</h3>
+            <p>Edit these CSS variables in <code>styles.css</code>:</p>
+            <code style="display: block; padding: 15px; margin-top: 10px; background: rgba(0, 0, 0, 0.3); border-radius: 5px;">
+                --primary-bg: #0a0e27;<br>
+                --highlight-yellow: #d4ff00;<br>
+                --highlight-cyan: #00d4ff;
+            </code>
+        </div>
+        
+        <div class="section">
+            <h2>💻 Development Setup (Optional)</h2>
+            
+            <h3>Using VS Code + Live Server (Recommended)</h3>
+            <div class="step">
+                1. Download <a href="https://code.visualstudio.com/" style="color: #00d4ff;">VS Code</a>
+            </div>
+            <div class="step">
+                2. Install "Live Server" extension (by Ritwick Dey)
+            </div>
+            <div class="step">
+                3. Right-click <code>index.html</code> → "Open with Live Server"
+            </div>
+            <div class="step">
+                4. Your site auto-refreshes as you edit files
+            </div>
+            
+            <h3 style="margin-top: 20px;">Using Python (Alternative)</h3>
+            <code style="display: block; padding: 15px; margin-top: 10px; background: rgba(0, 0, 0, 0.3); border-radius: 5px;">
+                # Go to folder in terminal, then run:<br>
+                python -m http.server 8000
+            </code>
+            <p style="margin-top: 10px;">Then visit: <code>http://localhost:8000</code></p>
+        </div>
+        
+        <div class="section">
+            <h2>🌐 Deploy to Web</h2>
+            
+            <h3>Option 1: Netlify (Easiest - Free)</h3>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Push folder to <a href="https://github.com/" style="color: #00d4ff;">GitHub</a></li>
+                <li>Go to <a href="https://netlify.com/" style="color: #00d4ff;">Netlify.com</a></li>
+                <li>Connect your GitHub repo</li>
+                <li>Deploy (instant publishing!)</li>
+            </ol>
+            
+            <h3 style="margin-top: 20px;">Option 2: Vercel</h3>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Push to GitHub</li>
+                <li>Go to <a href="https://vercel.com/" style="color: #00d4ff;">Vercel.com</a></li>
+                <li>Import project</li>
+                <li>Auto-deploys on each push</li>
+            </ol>
+            
+            <h3 style="margin-top: 20px;">Option 3: GitHub Pages (Free)</h3>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Push to GitHub repo</li>
+                <li>Settings → Pages</li>
+                <li>Select "main" branch</li>
+                <li>Your site goes live automatically</li>
+            </ol>
+            
+            <div class="success">
+                🎉 Your portfolio will have a live URL and be accessible worldwide!
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📧 Make Contact Form Work</h2>
+            
+            <p>The form currently shows demo notifications. To send real emails:</p>
+            
+            <h3>Option A: Formspree (Easiest)</h3>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Go to <a href="https://formspree.io/" style="color: #00d4ff;">formspree.io</a></li>
+                <li>Create account & get form ID</li>
+                <li>In <code>index.html</code>, find the form tag</li>
+                <li>Add: <code>action="https://formspree.io/f/YOUR_ID"</code></li>
+                <li>Done! Emails will now be sent to you</li>
+            </ol>
+            
+            <h3 style="margin-top: 20px;">Option B: Netlify Forms (If using Netlify)</h3>
+            <p>Just add <code>netlify</code> attribute to form - automatic!</p>
+        </div>
+        
+        <div class="section">
+            <h2>❓ FAQ</h2>
+            
+            <h3>Q: Do I need coding experience?</h3>
+            <p>No! Just basic text editing. You can customize everything by editing the HTML file in Notepad.</p>
+            
+            <h3 style="margin-top: 20px;">Q: Will it work on mobile?</h3>
+            <p>Yes! 100% responsive. Looks great on phones, tablets, and desktops.</p>
+            
+            <h3 style="margin-top: 20px;">Q: Can I use my own images?</h3>
+            <p>Absolutely! Just save your images in the folder and update the URLs in index.html.</p>
+            
+            <h3 style="margin-top: 20px;">Q: Is it really free?</h3>
+            <p>Yes! Bootstrap, Font Awesome, and Unsplash images are all free. Deployment to Netlify is free.</p>
+            
+            <h3 style="margin-top: 20px;">Q: What if I need help?</h3>
+            <p>Check the full README.md file for detailed documentation and troubleshooting.</p>
+            
+            <h3 style="margin-top: 20px;">Q: Can I sell work done with this?</h3>
+            <p>Yes! It's completely yours to use, modify, and monetize.</p>
+        </div>
+        
+        <div class="section">
+            <h2>🔗 Useful Resources</h2>
+            <ul style="margin-left: 20px;">
+                <li><a href="https://getbootstrap.com/docs/" style="color: #00d4ff;">Bootstrap Documentation</a> - CSS framework</li>
+                <li><a href="https://fontawesome.com/icons" style="color: #00d4ff;">Font Awesome Icons</a> - 2000+ icons</li>
+                <li><a href="https://unsplash.com/" style="color: #00d4ff;">Unsplash Images</a> - Free stock photos</li>
+                <li><a href="https://code.visualstudio.com/" style="color: #00d4ff;">VS Code</a> - Best code editor</li>
+                <li><a href="https://tinypng.com/" style="color: #00d4ff;">TinyPNG</a> - Compress images</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 Next Steps</h2>
+            
+            <div class="button-group">
+                <a href="index.html" class="btn btn-primary">View Portfolio Site</a>
+                <a href="README.md" class="btn btn-secondary">Read Full Documentation</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>✨ Ready to showcase your work? Your portfolio is ready to launch! ✨</p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Created with Bootstrap 5 • Unsplash Images • Font Awesome Icons</p>
+        </footer>
+    </div>
+</body>
+</html>

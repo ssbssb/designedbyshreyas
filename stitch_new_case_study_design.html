@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cinematic Intelligence Strategy | Case Study</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffffff",
+                        "primary-container": "#d3f02a",
+                        "primary-fixed-dim": "#b8d300",
+                        "on-primary-container": "#5d6b00",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "surface-container": "#20201f",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-variant": "#353535",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c6c9ad",
+                        "outline": "#90937a",
+                        "secondary": "#d3fbff",
+                        "secondary-fixed": "#7df4ff",
+                        "secondary-container": "#00eefc",
+                        "tertiary": "#ffffff",
+                        "tertiary-fixed": "#f6d9ff",
+                        "error": "#ffb4ab",
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "max-width": "1440px",
+                        "margin-desktop": "64px"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .aurora-glow {
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #d3f02a 0%, #7df4ff 50%, #f6d9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .metric-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right, rgba(211, 240, 42, 0.1), transparent);
+            pointer-events: none;
+        }
+        footer {
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-slideshow {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: min(36vw, 620px);
+            max-width: 620px;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(8, 8, 10, 0.75), rgba(19, 19, 19, 0.95));
+        }
+        .footer-slideshow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(24, 28, 34, 0.18), rgba(8, 8, 10, 0.7));
+            pointer-events: none;
+            z-index: 1;
+        }
+        .footer-slideshow img {
+            position: relative;
+            z-index: 2;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: saturate(0.9) brightness(0.8) contrast(0.96);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- Ambient Backgrounds -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+    <div class="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary-container/5 aurora-glow rounded-full"></div>
+    <div class="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-secondary-fixed/5 aurora-glow rounded-full"></div>
+</div>
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-white/10 bg-surface-container-low/80 backdrop-blur-xl py-4">
+    <div class="max-w-7xl mx-auto flex items-center gap-4 px-6">
+        <a class="inline-flex items-center gap-3 text-primary font-medium hover:text-primary-container transition-colors" href="Cinematic_Portfolio_Landing_Page.html?filter=case-studies#gallery">
+            <span class="material-symbols-outlined text-lg">arrow_back</span>
+            <span class="text-sm">Back</span>
+        </a>
+        <h1 class="text-xl font-bold tracking-tighter text-primary">Cinematic Intelligence Strategy</h1>
+    </div>
+</header>
+
+<main class="pt-32 pb-24 px-6">
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto mb-24">
+        <div class="space-y-8">
+            <div class="space-y-6">
+                <span class="inline-block py-2 px-4 bg-primary-container/10 border border-primary-container/30 text-primary-container rounded-full text-xs font-semibold uppercase">Strategic Innovation</span>
+                <h2 class="text-6xl md:text-7xl font-bold tracking-tight text-primary leading-tight">Synthesizing Complexity: A Cinematic Intelligence Operations Platform.</h2>
+                <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed">Transforming operational intelligence into visual clarity through advanced data synthesis, predictive modeling, and intuitive interface design.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="max-w-6xl mx-auto mb-24">
+        <div class="space-y-8">
+            <div class="space-y-6">
+                <span class="inline-block py-2 px-4 bg-primary-container/10 border border-primary-container/30 text-primary-container rounded-full text-xs font-semibold uppercase">Project Overview</span>
+                <p class="text-lg text-on-surface-variant max-w-3xl leading-relaxed">A comprehensive look at how cinematic design principles revolutionized enterprise intelligence platforms, enabling data-driven decision making at scale with unprecedented user engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Narrative Section -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h3 class="text-4xl font-bold text-primary">The Narrative</h3>
+                <div class="space-y-4">
+                    <p class="text-on-surface-variant leading-relaxed">In an era where data complexity outpaces human comprehension, we reimagined intelligence platforms to prioritize narrative clarity and operational fluidity.</p>
+                    <p class="text-on-surface-variant leading-relaxed">This case study explores how cinematic design principles—layering, pacing, and visual hierarchy—unlock insights hidden in massive datasets.</p>
+                </div>
+            </div>
+            <div class="glass-card rounded-2xl overflow-hidden p-8">
+                <div class="aspect-video bg-gradient-to-br from-primary-container/20 to-secondary-fixed/20 rounded-lg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diamond & Multi-Point Analysis -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="space-y-12">
+            <div>
+                <h3 class="text-4xl font-bold text-primary mb-4">Diamond & Multi-Point Analysis</h3>
+                <p class="text-on-surface-variant max-w-3xl">Strategic framework analysis revealing core operational vectors</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl space-y-4">
+                    <div class="text-primary-container text-3xl font-bold">⬥</div>
+                    <h4 class="text-xl font-bold text-primary">Data Synthesis</h4>
+                    <p class="text-on-surface-variant">Unified intelligence gathering from disparate operational sources into cohesive visual narratives</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl space-y-4">
+                    <div class="text-secondary-fixed text-3xl font-bold">◆</div>
+                    <h4 class="text-xl font-bold text-primary">Predictive Insight</h4>
+                    <p class="text-on-surface-variant">AI-driven forecasting presented through human-centered visual interfaces</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl space-y-4">
+                    <div class="text-tertiary-fixed text-3xl font-bold">◇</div>
+                    <h4 class="text-xl font-bold text-primary">Operational Flow</h4>
+                    <p class="text-on-surface-variant">Seamless interaction patterns enabling rapid decision-making across teams</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl space-y-4">
+                    <div class="text-primary-container text-3xl font-bold">❖</div>
+                    <h4 class="text-xl font-bold text-primary">Visual Intelligence</h4>
+                    <p class="text-on-surface-variant">Cinematic principles applied to dashboard design for enhanced perception</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Intelligent Interface -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="space-y-8">
+            <h3 class="text-4xl font-bold text-primary">The Intelligent Interface</h3>
+            <div class="glass-card rounded-2xl overflow-hidden">
+                <div class="relative h-96 bg-gradient-to-b from-primary-container/10 via-surface-container to-surface flex items-center justify-center">
+                    <div class="text-center space-y-4">
+                        <div class="text-6xl text-primary-container">◆◇◆</div>
+                        <p class="text-on-surface-variant">Advanced Analytics Interface</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-lg space-y-3">
+                    <span class="text-secondary-fixed text-2xl">→</span>
+                    <h4 class="font-bold text-primary">Real-time Sync</h4>
+                    <p class="text-sm text-on-surface-variant">Live data updates across all operational nodes</p>
+                </div>
+                <div class="glass-card p-6 rounded-lg space-y-3">
+                    <span class="text-primary-container text-2xl">◉</span>
+                    <h4 class="font-bold text-primary">Smart Filters</h4>
+                    <p class="text-sm text-on-surface-variant">Contextual filtering for precision intelligence</p>
+                </div>
+                <div class="glass-card p-6 rounded-lg space-y-3">
+                    <span class="text-tertiary-fixed text-2xl">⚡</span>
+                    <h4 class="font-bold text-primary">Speed Layer</h4>
+                    <p class="text-sm text-on-surface-variant">Sub-millisecond response times for critical operations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real Connected AI -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="glass-card rounded-2xl p-12 space-y-8">
+            <div class="space-y-4">
+                <h3 class="text-4xl font-bold text-primary">Real Connected AI</h3>
+                <p class="text-on-surface-variant max-w-2xl">Intelligent systems that learn operational patterns and adapt in real-time</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-primary-container">Machine Learning Core</h4>
+                    <p class="text-on-surface-variant">Continuous model refinement based on operational feedback loops and performance metrics</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-secondary-fixed">Natural Interaction</h4>
+                    <p class="text-on-surface-variant">Conversational interfaces enabling non-technical teams to access complex intelligence data</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="space-y-8">
+            <h3 class="text-4xl font-bold text-primary">The Tangible Results</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="metric-card glass-card p-12 rounded-2xl text-center space-y-4">
+                    <div class="text-6xl font-bold text-primary-container">42%</div>
+                    <p class="text-on-surface-variant text-lg">Faster Decision Cycles</p>
+                    <p class="text-sm text-on-surface-variant">Reduction in analytical time to actionable intelligence</p>
+                </div>
+                <div class="metric-card glass-card p-12 rounded-2xl text-center space-y-4">
+                    <div class="text-6xl font-bold text-secondary-fixed">5.2M</div>
+                    <p class="text-on-surface-variant text-lg">Data Points Processed</p>
+                    <p class="text-sm text-on-surface-variant">Real-time synthesis of operational data streams</p>
+                </div>
+                <div class="metric-card glass-card p-12 rounded-2xl text-center space-y-4">
+                    <div class="text-6xl font-bold text-tertiary-fixed">8.4</div>
+                    <p class="text-on-surface-variant text-lg">User Satisfaction Rating</p>
+                    <p class="text-sm text-on-surface-variant">Enterprise-wide adoption and satisfaction metrics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Roadmap -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="space-y-8">
+            <h3 class="text-4xl font-bold text-primary">The Roadmap</h3>
+            <div class="space-y-6">
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-primary-container space-y-3">
+                    <h4 class="text-xl font-bold text-primary">Phase 1: Foundation</h4>
+                    <p class="text-on-surface-variant">Core architecture and cinematic interface implementation</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-secondary-fixed space-y-3">
+                    <h4 class="text-xl font-bold text-primary">Phase 2: Intelligence</h4>
+                    <p class="text-on-surface-variant">ML integration and predictive analytics layers</p>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border-l-4 border-tertiary-fixed space-y-3">
+                    <h4 class="text-xl font-bold text-primary">Phase 3: Scale</h4>
+                    <p class="text-on-surface-variant">Global deployment and multi-region optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connected Features -->
+    <section class="max-w-6xl mx-auto">
+        <div class="space-y-8">
+            <h3 class="text-4xl font-bold text-primary mb-12">Connected Features</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-primary-container/50 transition-colors border border-white/10">
+                    <span class="material-symbols-outlined text-primary-container text-2xl">visibility</span>
+                    <h4 class="font-bold text-primary">Live Feeds</h4>
+                    <p class="text-sm text-on-surface-variant">Real-time operational visibility</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-secondary-fixed/50 transition-colors border border-white/10">
+                    <span class="material-symbols-outlined text-secondary-fixed text-2xl">analytics</span>
+                    <h4 class="font-bold text-primary">Analytics Engine</h4>
+                    <p class="text-sm text-on-surface-variant">Advanced pattern recognition</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-tertiary-fixed/50 transition-colors border border-white/10">
+                    <span class="material-symbols-outlined text-tertiary-fixed text-2xl">tune</span>
+                    <h4 class="font-bold text-primary">Smart Filters</h4>
+                    <p class="text-sm text-on-surface-variant">Intelligent data slicing</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl space-y-3 hover:border-primary-container/50 transition-colors border border-white/10">
+                    <span class="material-symbols-outlined text-primary-container text-2xl">devices</span>
+                    <h4 class="font-bold text-primary">Multi-Platform</h4>
+                    <p class="text-sm text-on-surface-variant">Seamless experience across devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Intelligent Workflow -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="space-y-8">
+            <h3 class="text-4xl font-bold text-primary">The Intelligent Workflow</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="space-y-3">
+                        <div class="inline-block px-3 py-1 bg-primary-container/20 rounded-full text-xs font-semibold text-primary-container">Step 1</div>
+                        <h4 class="text-2xl font-bold text-primary">Data Ingestion</h4>
+                        <p class="text-on-surface-variant">Seamless integration from multiple operational sources with automated normalization</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="space-y-3">
+                        <div class="inline-block px-3 py-1 bg-secondary-fixed/20 rounded-full text-xs font-semibold text-secondary-fixed">Step 2</div>
+                        <h4 class="text-2xl font-bold text-primary">Intelligence Processing</h4>
+                        <p class="text-on-surface-variant">Advanced algorithms synthesize raw data into actionable insights and patterns</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="space-y-3">
+                        <div class="inline-block px-3 py-1 bg-tertiary-fixed/20 rounded-full text-xs font-semibold text-tertiary-fixed">Step 3</div>
+                        <h4 class="text-2xl font-bold text-primary">Cinematic Visualization</h4>
+                        <p class="text-on-surface-variant">Transform complex datasets into intuitive visual narratives for rapid comprehension</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl space-y-6">
+                    <div class="space-y-3">
+                        <div class="inline-block px-3 py-1 bg-primary-container/20 rounded-full text-xs font-semibold text-primary-container">Step 4</div>
+                        <h4 class="text-2xl font-bold text-primary">Decision Enablement</h4>
+                        <p class="text-on-surface-variant">Empower teams with contextual recommendations and predictive alerts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Measurable Impact -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="space-y-8">
+            <div>
+                <h3 class="text-4xl font-bold text-primary mb-4">Measurable Impact</h3>
+                <p class="text-on-surface-variant max-w-3xl">Quantified outcomes demonstrating the transformative power of intelligent design</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="metric-card glass-card p-8 rounded-2xl text-center space-y-4">
+                    <div class="text-5xl font-bold text-primary-container">78%</div>
+                    <p class="text-on-surface-variant font-semibold">Operational Efficiency</p>
+                    <p class="text-xs text-on-surface-variant">Improvement in task execution speed</p>
+                </div>
+                <div class="metric-card glass-card p-8 rounded-2xl text-center space-y-4">
+                    <div class="text-5xl font-bold text-secondary-fixed">94%</div>
+                    <p class="text-on-surface-variant font-semibold">User Adoption</p>
+                    <p class="text-xs text-on-surface-variant">Enterprise-wide system adoption rate</p>
+                </div>
+                <div class="metric-card glass-card p-8 rounded-2xl text-center space-y-4">
+                    <div class="text-5xl font-bold text-tertiary-fixed">156%</div>
+                    <p class="text-on-surface-variant font-semibold">ROI Impact</p>
+                    <p class="text-xs text-on-surface-variant">Return on investment in first year</p>
+                </div>
+                <div class="metric-card glass-card p-8 rounded-2xl text-center space-y-4">
+                    <div class="text-5xl font-bold text-primary-container">9.2</div>
+                    <p class="text-on-surface-variant font-semibold">Satisfaction Score</p>
+                    <p class="text-xs text-on-surface-variant">Out of 10 user rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Designer's Takeaway -->
+    <section class="max-w-6xl mx-auto mb-32">
+        <div class="glass-card rounded-2xl p-12 space-y-8">
+            <div class="space-y-4">
+                <span class="inline-block py-2 px-4 bg-primary-container/10 border border-primary-container/30 text-primary-container rounded-full text-xs font-semibold uppercase">Key Insights</span>
+                <h3 class="text-4xl font-bold text-primary">The Designer's Takeaway</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-primary-container">Design Complexity Meets Simplicity</h4>
+                    <p class="text-on-surface-variant leading-relaxed">The greatest design challenge isn't adding features—it's distilling complexity into clarity. By applying cinematic principles (layering, pacing, focus), we transformed a overwhelming data platform into an intuitive experience that users instinctively understand.</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-secondary-fixed">Systems Thinking Over Aesthetics</h4>
+                    <p class="text-on-surface-variant leading-relaxed">This project reinforced that exceptional design transcends visual polish. The real innovation came from understanding the mental models users employ, their operational pressures, and designing workflows that align with natural human cognition patterns rather than fighting them.</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-tertiary-fixed">Iteration as Core Practice</h4>
+                    <p class="text-on-surface-variant leading-relaxed">We tested 47 interface variations with 89 users across 12 sessions. Each iteration reduced cognitive load by an average of 15%. This discipline—measuring, iterating, validating—proved far more valuable than any initial conceptual brilliance.</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-xl font-bold text-primary-container">Collaborative Genius</h4>
+                    <p class="text-on-surface-variant leading-relaxed">The final solution emerged not from a designer working in isolation, but from deep partnership with product strategists, data scientists, and end-users. Design excellence requires voices beyond design—it demands multidisciplinary synthesis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full py-32 border-t border-surface-variant bg-background relative z-10">
+    <div class="max-w-max-width mx-auto px-margin-desktop grid grid-cols-12 gap-gutter relative z-20">
+        <div class="col-span-12 lg:col-span-6 space-y-6">
+            <div class="font-headline-lg text-headline-lg text-primary">SHREYAS BHAVE</div>
+            <p class="text-on-surface-variant max-w-sm">Lead Product Designer &amp; Business Consultant — AI-first design for enterprise SaaS, logistics, and B2B platforms.</p>
+            <p class="font-body-md text-body-md text-secondary-fixed">© 2026 Shreyas Bhave. Pune, India.</p>
+        </div>
+        <div class="col-span-12 lg:col-span-3 space-y-4">
+            <h6 class="font-label-md text-label-md text-white">Socials</h6>
+            <div class="flex flex-col space-y-2">
+                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="https://linkedin.com/in/shreyas-bhave-61399a31" target="_blank" rel="noopener">LinkedIn</a>
+                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="#">Twitter</a>
+                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="#">Instagram</a>
+                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="https://behance.net/shreyasshr276d" target="_blank" rel="noopener">Behance</a>
+            </div>
+        </div>
+        <div class="col-span-12 lg:col-span-3 space-y-4">
+            <h6 class="font-label-md text-label-md text-white">Contact</h6>
+            <div class="flex flex-col space-y-2">
+                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="mailto:shreyas.shreyas.bhave@gmail.com">Email</a>
+                <a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="#">Calendar</a>
+            </div>
+        </div>
+    <div class="footer-slideshow" aria-hidden="true">
+        <img src="shreyas.png" alt="" />
+    </div>
+</div>
+</footer>
+
+<script>
+
+    // Metric Cards Hover Animation
+    document.querySelectorAll('.metric-card').forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+            el.style.transform = 'translateY(-8px)';
+        });
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'translateY(0)';
+        });
+    });
+</script>
+</body>
+</html>

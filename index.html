@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shreyas Bhave | Lead Product Designer &amp; Business Consultant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed-dim": "#b8d300",
+                "surface-container-highest": "#353535",
+                "surface-container-high": "#2a2a2a",
+                "outline": "#90937a",
+                "surface-tint": "#b8d300",
+                "on-tertiary-fixed-variant": "#7200a3",
+                "on-secondary-fixed-variant": "#004f54",
+                "surface-bright": "#393939",
+                "secondary": "#d3fbff",
+                "surface-container-lowest": "#0e0e0e",
+                "on-surface": "#e5e2e1",
+                "surface": "#131313",
+                "on-tertiary-container": "#972fca",
+                "on-tertiary": "#510074",
+                "on-secondary-container": "#00686f",
+                "surface-variant": "#353535",
+                "background": "#131313",
+                "error": "#ffb4ab",
+                "secondary-container": "#00eefc",
+                "tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#e9b3ff",
+                "tertiary-fixed": "#f6d9ff",
+                "primary-container": "#d3f02a",
+                "inverse-on-surface": "#313030",
+                "tertiary-container": "#f6d9ff",
+                "on-tertiary-fixed": "#310048",
+                "on-surface-variant": "#c6c9ad",
+                "secondary-fixed": "#7df4ff",
+                "surface-dim": "#131313",
+                "primary": "#ffffff",
+                "surface-container": "#20201f",
+                "secondary-fixed-dim": "#00dbe9",
+                "on-primary-fixed-variant": "#414c00",
+                "on-error": "#690005",
+                "surface-container-low": "#1c1b1b",
+                "inverse-surface": "#e5e2e1",
+                "on-error-container": "#ffdad6",
+                "on-background": "#e5e2e1",
+                "on-primary": "#2c3400",
+                "inverse-primary": "#576500",
+                "outline-variant": "#464934",
+                "on-primary-fixed": "#191e00",
+                "on-primary-container": "#5d6b00",
+                "primary-fixed": "#d3f02a",
+                "error-container": "#93000a",
+                "on-secondary-fixed": "#002022",
+                "on-secondary": "#00363a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "max-width": "1440px",
+                "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                "headline-lg": ["Sora"],
+                "headline-xl": ["Sora"],
+                "display-lg": ["Sora"],
+                "label-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #050505;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .magnetic-pull {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .aurora-blur {
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .skill-ring {
+            transition: stroke-dashoffset 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glow-hover {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(184, 211, 0, 0.4);
+        }
+
+        #main-nav {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+            gap: 0.75rem;
+        }
+        .nav-indicator {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 36px;
+            width: 80px;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, rgba(211, 240, 42, 0.95), rgba(0, 238, 252, 0.75));
+            box-shadow:
+                0 0 24px rgba(211, 240, 42, 0.45),
+                0 0 48px rgba(0, 238, 252, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.35);
+            transform: translateY(-50%) translateX(0) scale(1);
+            transition:
+                transform 0.45s cubic-bezier(0.34, 1.4, 0.64, 1),
+                width 0.45s cubic-bezier(0.34, 1.4, 0.64, 1),
+                opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .nav-link {
+            position: relative;
+            z-index: 1;
+            border: 1px solid transparent;
+            transition:
+                color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1),
+                text-shadow 0.35s ease,
+                border-color 0.35s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.06);
+            opacity: 0;
+            transform: scale(0.88);
+            transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1);
+            z-index: -1;
+        }
+        .nav-link:hover {
+            color: #fff !important;
+            transform: translateY(-1px);
+            text-shadow: 0 0 20px rgba(211, 240, 42, 0.35);
+        }
+        .nav-link:hover::after {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .nav-link:focus-visible {
+            outline: none;
+            border-color: rgba(211, 240, 42, 0.6);
+            box-shadow: 0 0 0 3px rgba(211, 240, 42, 0.25);
+        }
+        .nav-link.active {
+            color: #0e0e0e !important;
+            font-weight: 700;
+            transform: translateY(-1px);
+            text-shadow: none;
+        }
+        .nav-link.active::after {
+            opacity: 0;
+        }
+        #mobile-nav .nav-link.active {
+            color: #d3f02a !important;
+            background: rgba(211, 240, 42, 0.12);
+            border-color: rgba(211, 240, 42, 0.35);
+        }
+
+        #back-to-top {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(16px);
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes spotlight-pulse {
+            0%, 100% { opacity: 0.2; transform: scale(1) translate(50%, -50%); }
+            50% { opacity: 0.4; transform: scale(1.1) translate(45%, -55%); }
+        }
+        .animate-spotlight {
+            animation: spotlight-pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes play-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 240, 42, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(211, 240, 42, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 240, 42, 0); }
+        }
+        .animate-play-pulse {
+            animation: play-pulse 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .shimmer-bg {
+            background: linear-gradient(90deg, rgba(211, 240, 42, 1) 0%, rgba(211, 240, 42, 0.8) 40%, rgba(255, 255, 255, 1) 50%, rgba(211, 240, 42, 0.8) 60%, rgba(211, 240, 42, 1) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite linear;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-stagger {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #gallery-filters {
+            position: relative;
+            z-index: 1;
+        }
+        .gallery-filter {
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+            color: #c6c9ad;
+            font-weight: 500;
+            white-space: nowrap;
+            transition:
+                color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.35s ease,
+                background 0.35s ease,
+                transform 0.4s cubic-bezier(0.34, 1.35, 0.64, 1),
+                box-shadow 0.35s ease;
+        }
+        .gallery-filter:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+        .gallery-filter:focus-visible {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(211, 240, 42, 0.35);
+            border-color: rgba(211, 240, 42, 0.5);
+        }
+        .gallery-filter.active {
+            color: #0e0e0e;
+            font-weight: 700;
+            border-color: transparent;
+            background: linear-gradient(135deg, #d3f02a 0%, #b8e600 100%);
+            box-shadow:
+                0 4px 20px rgba(211, 240, 42, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .gallery-filter.active::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, rgba(211, 240, 42, 0.6), rgba(0, 238, 252, 0.4));
+            z-index: -1;
+            opacity: 0.6;
+            filter: blur(6px);
+        }
+
+        #gallery-grid {
+            transition: gap 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        #gallery-grid.is-filtering .gallery-item {
+            transition-duration: 0.55s;
+        }
+
+        .gallery-item {
+            transition:
+                opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.34, 1.25, 0.64, 1),
+                filter 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            transform-origin: center center;
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0);
+        }
+
+        .gallery-item.is-leaving {
+            opacity: 0;
+            transform: scale(0.88) translateY(24px);
+            filter: blur(10px);
+            pointer-events: none;
+        }
+
+        .gallery-item.is-hidden {
+            display: none !important;
+        }
+
+        .gallery-item.is-entering {
+            opacity: 0;
+            transform: scale(0.9) translateY(28px);
+            filter: blur(12px);
+        }
+
+        .gallery-item.is-visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0);
+        }
+
+        #gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            #gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1024px) {
+            #gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+
+        /* Stitch-style glowing header */
+        .site-header {
+            padding: 12px 16px 0;
+        }
+        .header-glow-shell {
+            position: relative;
+            max-width: 1440px;
+            margin: 0 auto;
+            border-radius: 20px;
+            padding: 2px;
+            overflow: hidden;
+        }
+        .header-glow-shell::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: conic-gradient(from 0deg, #d3f02a, #00eefc, #e9b3ff, #d3f02a, #00eefc);
+            animation: header-glow-spin 5s linear infinite;
+            opacity: 0.85;
+        }
+        .header-glow-shell::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 18px;
+            background: rgba(5, 5, 5, 0.92);
+            z-index: 0;
+        }
+        @keyframes header-glow-spin {
+            to { transform: rotate(360deg); }
+        }
+        .header-glass {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            min-height: 64px;
+            padding: 0 1.5rem;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow:
+                0 0 0 1px rgba(211, 240, 42, 0.08),
+                0 8px 32px rgba(0, 0, 0, 0.45),
+                0 0 40px rgba(0, 238, 252, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            animation: header-breathe 4s ease-in-out infinite;
+        }
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.9rem;
+            text-decoration: none;
+            color: inherit;
+        }
+        .brand-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #d3f02a 0%, #00eefc 45%, #e9b3ff 100%);
+            color: #0e0e0e;
+            font-weight: 800;
+            letter-spacing: -0.06em;
+            box-shadow: 0 0 20px rgba(211, 240, 42, 0.16);
+        }
+        .brand-name {
+            display: inline-block;
+            font-size: 1rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+        }
+        @keyframes header-breathe {
+            0%, 100% { box-shadow: 0 0 0 1px rgba(211, 240, 42, 0.08), 0 8px 32px rgba(0,0,0,0.45), 0 0 28px rgba(211,240,42,0.12), inset 0 1px 0 rgba(255,255,255,0.08); }
+            50% { box-shadow: 0 0 0 1px rgba(0, 238, 252, 0.2), 0 8px 40px rgba(0,0,0,0.5), 0 0 48px rgba(0,238,252,0.18), inset 0 1px 0 rgba(255,255,255,0.12); }
+        }
+
+        /* Client logos */
+        .client-marquee {
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+        }
+        .client-logo-card {
+            flex: 0 0 auto;
+            min-width: 200px;
+            padding: 1.25rem 2rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .client-logo-card:hover {
+            transform: translateY(-6px) scale(1.03);
+            border-color: rgba(211, 240, 42, 0.45);
+            box-shadow: 0 0 30px rgba(211, 240, 42, 0.2), 0 20px 40px rgba(0, 0, 0, 0.35);
+            background: rgba(211, 240, 42, 0.06);
+        }
+        .client-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            animation: client-scroll 28s linear infinite;
+        }
+        .client-marquee:hover .client-track { animation-play-state: paused; }
+        @keyframes client-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Journey timeline */
+        .journey-line {
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #d3f02a, #00eefc, rgba(255,255,255,0.1));
+        }
+        .journey-dot {
+            box-shadow: 0 0 0 4px rgba(211, 240, 42, 0.15), 0 0 20px rgba(211, 240, 42, 0.45);
+        }
+
+        /* Testimonials carousel */
+        .testimonial-viewport {
+            overflow: hidden;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 0 0.5rem;
+            box-sizing: border-box;
+        }
+        @media (min-width: 768px) {
+            .testimonial-slide { flex: 0 0 50%; }
+        }
+        @media (min-width: 1280px) {
+            .testimonial-slide { flex: 0 0 25%; }
+        }
+        .testimonial-card {
+            height: 100%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(211, 240, 42, 0.35);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .header-glow-shell::before, .client-track, .header-glass {
+                animation: none !important;
+            }
+            .reveal, .hero-stagger, .animate-float, .animate-spotlight, .animate-play-pulse, .shimmer-bg, .skill-ring, .gallery-item, .gallery-filter {
+                animation: none !important;
+                transition: none !important;
+                transform: none !important;
+                opacity: 1 !important;
+                filter: none !important;
+                max-height: none !important;
+            }
+            .gallery-item.is-hidden {
+                display: none;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353535;
+            border-radius: 10px;
+        }
+        footer {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Footer designer image layout */
+        .footer-slideshow {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: min(36vw, 620px);
+            max-width: 620px;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(8, 8, 10, 0.75), rgba(19, 19, 19, 0.95));
+        }
+        .footer-slideshow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(24, 28, 34, 0.18), rgba(8, 8, 10, 0.7));
+            pointer-events: none;
+            z-index: 1;
+        }
+        .footer-slideshow img {
+            position: relative;
+            z-index: 2;
+            width: auto;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            filter: saturate(0.9) brightness(0.8) contrast(0.96);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- Global Aurora Blurs -->
+<div class="fixed top-[-20%] left-[-10%] w-[600px] h-[600px] bg-[#00eefc] rounded-full aurora-blur"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#7200a3] rounded-full aurora-blur"></div>
+<!-- Top Navigation Bar — full-width glass + glow -->
+<header class="site-header fixed top-0 left-0 right-0 z-50 w-full">
+<div class="header-glow-shell">
+<div class="header-glass">
+<a class="brand-logo" href="#hero">
+    <span class="brand-mark">SB</span>
+    <span class="brand-name">Shreyas Bhave</span>
+</a>
+<nav class="hidden lg:flex items-center flex-wrap justify-center gap-1 flex-1" id="main-nav">
+<span aria-hidden="true" class="nav-indicator" id="nav-indicator"></span>
+<a class="nav-link active font-medium px-3 py-2 rounded-full text-sm" href="#hero" data-section="hero">Home</a>
+<a class="nav-link font-medium px-3 py-2 rounded-full text-sm text-on-surface-variant" href="#gallery" data-section="gallery">Work</a>
+<a class="nav-link font-medium px-3 py-2 rounded-full text-sm text-on-surface-variant" href="#clients" data-section="clients">Clients</a>
+<a class="nav-link font-medium px-3 py-2 rounded-full text-sm text-on-surface-variant" href="#journey" data-section="journey">Journey</a>
+<a class="nav-link font-medium px-3 py-2 rounded-full text-sm text-on-surface-variant" href="#technical-sovereignty" data-section="technical-sovereignty">Skills</a>
+<a class="nav-link font-medium px-3 py-2 rounded-full text-sm text-on-surface-variant" href="#testimonials" data-section="testimonials">Reviews</a>
+<a class="nav-link font-medium px-3 py-2 rounded-full text-sm text-on-surface-variant" href="#contact" data-section="contact">Contact</a>
+</nav>
+<div class="flex items-center gap-3 shrink-0">
+<a class="hidden sm:inline-flex bg-primary-container text-on-primary-container px-5 py-2 rounded-full font-label-md font-bold magnetic-pull" href="#contact">Hire Me</a>
+<button class="lg:hidden material-symbols-outlined text-primary-fixed p-2 rounded-full hover:bg-white/10" type="button" id="mobile-menu-btn" aria-label="Open menu">menu</button>
+</div>
+</div>
+</div>
+</header>
+<nav class="fixed top-[88px] left-4 right-4 z-40 hidden flex-col gap-1 p-4 rounded-2xl border border-white/10 bg-black/90 backdrop-blur-xl lg:hidden" id="mobile-nav">
+<a class="nav-link px-4 py-3 rounded-xl text-on-surface-variant" href="#hero" data-section="hero">Home</a>
+<a class="nav-link px-4 py-3 rounded-xl text-on-surface-variant" href="#gallery" data-section="gallery">Work</a>
+<a class="nav-link px-4 py-3 rounded-xl text-on-surface-variant" href="#clients" data-section="clients">Clients</a>
+<a class="nav-link px-4 py-3 rounded-xl text-on-surface-variant" href="#journey" data-section="journey">Journey</a>
+<a class="nav-link px-4 py-3 rounded-xl text-on-surface-variant" href="#contact" data-section="contact">Contact</a>
+</nav>
+<main class="max-w-max-width mx-auto px-4 md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col lg:flex-row items-center justify-between pt-36 pb-16" id="hero">
+<div class="w-full lg:w-1/2 z-10 space-y-8">
+<div class="inline-flex items-center space-x-3 bg-white/5 border border-white/10 rounded-full px-4 py-2 hero-stagger" style="animation-delay: 0.1s;">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary-fixed-dim shadow-[0_0_10px_#b8d300]"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">Available for New Challenges</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[84px] leading-tight text-white max-w-2xl hero-stagger" style="animation-delay: 0.3s;">
+                    Designing <span class="text-primary-container">Intelligent</span> Enterprise Experiences That Scale.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg hero-stagger" style="animation-delay: 0.5s;">
+                    I bridge the gap between complex enterprise logic and visionary AI-driven interfaces. Crafting frictionless systems for the world's most ambitious teams.
+                </p>
+<div class="flex flex-wrap gap-4 pt-6 hero-stagger" style="animation-delay: 0.7s;">
+<a class="bg-[#E2FF3B] text-black font-bold px-8 py-4 rounded-full flex items-center space-x-3 glow-hover transition-all duration-300 magnetic-pull" href="#gallery">
+<span>View Case Studies</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<button class="glass-card text-white px-8 py-4 rounded-full border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105" type="button">
+                        Download CV
+                    </button>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex justify-center items-center mt-12 lg:mt-0 relative hero-stagger" style="animation-delay: 0.9s;">
+<div class="relative w-full max-w-[440px] aspect-[4/5] animate-float">
+<div class="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-primary-container/40 via-secondary-fixed/20 to-transparent blur-sm opacity-80"></div>
+<div class="relative h-full rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.55)] group cursor-pointer" onclick="openVideoModal()" role="button" tabindex="0" aria-label="Play design philosophy demo video" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openVideoModal();}">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10"></div>
+<img alt="Shreyas Bhave — Lead Product Designer" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" src="shreyas.png"/>
+<!-- Cinematic Spotlight Decoration -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed-dim/20 blur-[100px] rounded-full animate-spotlight"></div>
+<!-- Video Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 rounded-full bg-primary-container/90 flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-2xl animate-play-pulse">
+<span class="material-symbols-outlined text-black text-4xl translate-x-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="py-32 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal" id="strategist">
+<div class="lg:col-span-4 space-y-6">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-[0.3em]">Origins &amp; Philosophy</span>
+<h2 class="font-headline-xl text-headline-xl leading-none">The Strategist <br/>Behind the<br/> <span class="text-secondary-fixed">Complexity.</span></h2>
+</div>
+<div class="lg:col-span-8 glass-card p-12 rounded-[2rem] space-y-8">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                    With over a decade of experience, I’ve moved beyond simple pixels to engineer entire ecosystems. My journey has been defined by a relentless pursuit of clarity in the face of enterprise-grade complexity. I believe that design is not just a layer on top of a product, but the very skeletal structure that supports its growth.
+                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+<div class="space-y-4 group">
+<div class="w-12 h-1 bg-primary-container transition-all group-hover:w-full duration-500"></div>
+<h4 class="font-headline-lg text-[24px]">Strategic Thinking</h4>
+<p class="text-on-surface-variant">Developing systems that don't just solve today's problems but anticipate the market shifts of tomorrow.</p>
+</div>
+<div class="space-y-4 group">
+<div class="w-12 h-1 bg-secondary-fixed transition-all group-hover:w-full duration-500"></div>
+<h4 class="font-headline-lg text-[24px]">Creative Leadership</h4>
+<p class="text-on-surface-variant">Empowering cross-functional teams to embrace AI integration without losing the human-centric touch.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Study Gallery -->
+<section class="py-32 reveal" id="gallery">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div class="space-y-4">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-[0.3em]">Selected Work</span>
+<h2 class="font-headline-xl text-headline-xl">Visual Proof of <br/>Excellence.</h2>
+</div>
+<div class="flex flex-nowrap gap-2 overflow-x-hidden pb-4 md:pb-0 whitespace-nowrap" id="gallery-filters" role="tablist" aria-label="Filter portfolio work">
+<button class="gallery-filter active px-4 py-2 rounded-full text-xs md:text-sm" data-filter="all" type="button" role="tab" aria-selected="true">All work</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-xs md:text-sm" data-filter="case-studies" type="button" role="tab" aria-selected="false">Case Studies</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-xs md:text-sm" data-filter="ui-ux" type="button" role="tab" aria-selected="false">UI/UX Projects</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-xs md:text-sm" data-filter="app" type="button" role="tab" aria-selected="false">App Design</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-xs md:text-sm" data-filter="dashboard" type="button" role="tab" aria-selected="false">Dashboard designs</button>
+<button class="gallery-filter px-4 py-2 rounded-full text-xs md:text-sm" data-filter="website" type="button" role="tab" aria-selected="false">Websites designs</button>
+</div>
+</div>
+<!-- 3×3 Portfolio Grid -->
+<div id="gallery-grid">
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="dashboard"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/dash1/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-primary-container font-label-sm uppercase tracking-widest mb-1">Dashboard</span><h3 class="font-headline-lg text-lg">Logistics Command</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="dashboard"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/dash2/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-primary-container font-label-sm uppercase tracking-widest mb-1">Dashboard</span><h3 class="font-headline-lg text-lg">Ops Control Center</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="dashboard"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/dash3/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-primary-container font-label-sm uppercase tracking-widest mb-1">Dashboard</span><h3 class="font-headline-lg text-lg">Fleet Analytics Hub</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="app ui-ux"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/app1/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-secondary-fixed font-label-sm uppercase tracking-widest mb-1">App Design</span><h3 class="font-headline-lg text-lg">Terminal Mobile</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="app ui-ux"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/app2/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-secondary-fixed font-label-sm uppercase tracking-widest mb-1">App Design</span><h3 class="font-headline-lg text-lg">Port Companion</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="app ui-ux"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/app3/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-secondary-fixed font-label-sm uppercase tracking-widest mb-1">App Design</span><h3 class="font-headline-lg text-lg">Field Ops Suite</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="website ui-ux"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/web1/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-tertiary-fixed-dim font-label-sm uppercase tracking-widest mb-1">Website</span><h3 class="font-headline-lg text-lg">Corporate Portal</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="website ui-ux"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/web2/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-tertiary-fixed-dim font-label-sm uppercase tracking-widest mb-1">Website</span><h3 class="font-headline-lg text-lg">Brand Experience</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="website ui-ux"><img alt="Project thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/web3/800/600"/><div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0"><span class="text-tertiary-fixed-dim font-label-sm uppercase tracking-widest mb-1">Website</span><h3 class="font-headline-lg text-lg">Campaign Landing</h3></div></article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="case-studies">
+    <a class="absolute inset-0 z-10" href="stitch_new_case_study_design.html" aria-label="Open case study"></a>
+    <img alt="Case study thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/case1/800/600"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0">
+        <span class="text-primary-container font-label-sm uppercase tracking-widest mb-1">Case Study</span>
+        <h3 class="font-headline-lg text-lg">Enterprise Redesign</h3>
+    </div>
+</article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="case-studies">
+    <a class="absolute inset-0 z-10" href="stitch_new_case_study_design.html" aria-label="Open case study"></a>
+    <img alt="Case study thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/case2/800/600"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0">
+        <span class="text-primary-container font-label-sm uppercase tracking-widest mb-1">Case Study</span>
+        <h3 class="font-headline-lg text-lg">Design Systems</h3>
+    </div>
+</article>
+<article class="gallery-item relative group overflow-hidden rounded-2xl aspect-[4/3] glow-hover cursor-pointer" data-category="case-studies">
+    <a class="absolute inset-0 z-10" href="stitch_new_case_study_design.html" aria-label="Open case study"></a>
+    <img alt="Case study thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://picsum.photos/seed/case3/800/600"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-3 group-hover:translate-y-0">
+        <span class="text-primary-container font-label-sm uppercase tracking-widest mb-1">Case Study</span>
+        <h3 class="font-headline-lg text-lg">Product Launch</h3>
+    </div>
+</article>
+</div>
+</section>
+<!-- Skills & Tools -->
+<section class="py-32 reveal" id="technical-sovereignty">
+<div class="text-center mb-24">
+<h2 class="font-headline-xl text-headline-xl mb-6">Technical Sovereignty</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Mastering the tools of the future to deliver unparalleled precision in every frame.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Skill 1 -->
+<div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center space-y-6 group hover:border-primary-container hover:scale-105 transition-all duration-500 glow-hover">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary-container skill-ring" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4" data-percent="90" style="stroke-dasharray: 364; stroke-dashoffset: 364;"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-2xl"><span class="skill-percent" data-target="90">0</span>%</div>
+</div>
+<div>
+<h4 class="font-headline-lg text-[20px] mb-2">Product Design</h4>
+<p class="text-label-sm text-on-surface-variant">End-to-end UX/UI lifecycles</p>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center space-y-6 group hover:border-secondary-fixed hover:scale-105 transition-all duration-500 glow-hover">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-secondary-fixed skill-ring" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4" data-percent="85" style="stroke-dasharray: 364; stroke-dashoffset: 364;"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-2xl"><span class="skill-percent" data-target="85">0</span>%</div>
+</div>
+<div>
+<h4 class="font-headline-lg text-[20px] mb-2">UX Strategy</h4>
+<p class="text-label-sm text-on-surface-variant">Research &amp; Business Logic</p>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center space-y-6 group hover:border-primary-fixed-dim hover:scale-105 transition-all duration-500 glow-hover">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-primary-fixed-dim skill-ring" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4" data-percent="95" style="stroke-dasharray: 364; stroke-dashoffset: 364;"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-2xl"><span class="skill-percent" data-target="95">0</span>%</div>
+</div>
+<div>
+<h4 class="font-headline-lg text-[20px] mb-2">AI Implementation</h4>
+<p class="text-label-sm text-on-surface-variant">Generative UI &amp; Models</p>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center space-y-6 group hover:border-tertiary-fixed-dim hover:scale-105 transition-all duration-500 glow-hover">
+<div class="relative w-32 h-32">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4"></circle>
+<circle class="text-tertiary-fixed-dim skill-ring" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="4" data-percent="80" style="stroke-dasharray: 364; stroke-dashoffset: 364;"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-2xl"><span class="skill-percent" data-target="80">0</span>%</div>
+</div>
+<div>
+<h4 class="font-headline-lg text-[20px] mb-2">Proto &amp; Motion</h4>
+<p class="text-label-sm text-on-surface-variant">High-Fidelity Interactivity</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Me Section -->
+<section class="py-32 border-t border-white/5 reveal" id="why-me">
+<div class="text-center mb-16 space-y-4">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-[0.3em]">Why Choose Me</span>
+<h2 class="font-headline-xl text-headline-xl">The Partner Behind <span class="text-primary-container">Exceptional</span> Outcomes</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">A proven blend of strategic depth, creative leadership, and relentless delivery — built for teams that expect more than pixels.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="space-y-4">
+<div class="p-4 bg-white/5 rounded-2xl w-fit">
+<span class="material-symbols-outlined text-primary-container text-3xl">verified</span>
+</div>
+<h5 class="font-headline-lg text-[20px]">Dedicated</h5>
+<p class="text-on-surface-variant text-sm">Treating every project with the intensity and care of a personal obsession.</p>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white/5 rounded-2xl w-fit">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">schedule</span>
+</div>
+<h5 class="font-headline-lg text-[20px]">Punctual</h5>
+<p class="text-on-surface-variant text-sm">Deadlines are sacred milestones, never missed and always over-delivered.</p>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white/5 rounded-2xl w-fit">
+<span class="material-symbols-outlined text-primary-fixed-dim text-3xl">psychology</span>
+</div>
+<h5 class="font-headline-lg text-[20px]">Always Learning</h5>
+<p class="text-on-surface-variant text-sm">Curiosity is my hobby. I spend my off-hours exploring the frontier of technology.</p>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white/5 rounded-2xl w-fit">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-3xl">auto_graph</span>
+</div>
+<h5 class="font-headline-lg text-[20px]">Strategic Ownership</h5>
+<p class="text-on-surface-variant text-sm">I don't just take orders; I provide direction and own the outcome.</p>
+</div>
+</div>
+</section>
+<!-- Trusted Clients -->
+<section class="py-32 reveal overflow-hidden" id="clients">
+<div class="text-center mb-16 space-y-4">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-[0.3em]">Enterprise Partners</span>
+<h2 class="font-headline-xl text-headline-xl">Trusted by <span class="text-primary-container">Global</span> Leaders</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">A decade of design leadership across logistics, FMCG, pharma, mobility, and enterprise platforms.</p>
+</div>
+<div class="client-marquee overflow-hidden py-4 mb-12">
+<div class="client-track">
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">DP World</p><p class="text-xs text-on-surface-variant mt-1">Logistics &amp; Supply Chain</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Unilever</p><p class="text-xs text-on-surface-variant mt-1">FMCG Enterprise</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Schindler</p><p class="text-xs text-on-surface-variant mt-1">Mobility &amp; Engineering</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Metro Park</p><p class="text-xs text-on-surface-variant mt-1">Commercial Spaces</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Sun Pharma</p><p class="text-xs text-on-surface-variant mt-1">Pharmaceutical</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">DP World</p><p class="text-xs text-on-surface-variant mt-1">Logistics &amp; Supply Chain</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Unilever</p><p class="text-xs text-on-surface-variant mt-1">FMCG Enterprise</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Schindler</p><p class="text-xs text-on-surface-variant mt-1">Mobility &amp; Engineering</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Metro Park</p><p class="text-xs text-on-surface-variant mt-1">Commercial Spaces</p></div>
+<div class="client-logo-card"><p class="font-headline-lg text-xl text-white">Sun Pharma</p><p class="text-xs text-on-surface-variant mt-1">Pharmaceutical</p></div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-max-width mx-auto">
+<div class="glass-card p-6 rounded-2xl text-center group hover:border-primary-container/50 transition-all duration-500 hover:-translate-y-2"><p class="font-bold text-lg">DP World</p><p class="text-xs text-primary-fixed mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Active Client</p></div>
+<div class="glass-card p-6 rounded-2xl text-center group hover:border-secondary-fixed/50 transition-all duration-500 hover:-translate-y-2"><p class="font-bold text-lg">Unilever</p><p class="text-xs text-secondary-fixed mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Enterprise</p></div>
+<div class="glass-card p-6 rounded-2xl text-center group hover:border-primary-fixed-dim/50 transition-all duration-500 hover:-translate-y-2"><p class="font-bold text-lg">Schindler</p><p class="text-xs text-primary-fixed-dim mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Mobility</p></div>
+<div class="glass-card p-6 rounded-2xl text-center group hover:border-tertiary-fixed-dim/50 transition-all duration-500 hover:-translate-y-2"><p class="font-bold text-lg">Metro Park</p><p class="text-xs text-tertiary-fixed-dim mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Real Estate</p></div>
+<div class="glass-card p-6 rounded-2xl text-center group hover:border-primary-container/50 transition-all duration-500 hover:-translate-y-2 col-span-2 md:col-span-1"><p class="font-bold text-lg">Sun Pharma</p><p class="text-xs text-primary-container mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Pharma</p></div>
+</div>
+</section>
+<!-- My Journey -->
+<section class="py-32 reveal border-t border-white/5" id="journey">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-20 space-y-4">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-[0.3em]">Career Timeline</span>
+<h2 class="font-headline-xl text-headline-xl">My <span class="text-secondary-fixed">Journey</span></h2>
+<p class="text-on-surface-variant">From enterprise UI craft to AI-first product leadership across global B2B platforms.</p>
+</div>
+<div class="relative pl-10 space-y-12">
+<div class="journey-line" aria-hidden="true"></div>
+<article class="relative">
+<span class="journey-dot absolute -left-10 top-2 w-6 h-6 rounded-full bg-primary-container border-2 border-[#050505]"></span>
+<div class="glass-card p-8 rounded-2xl space-y-3 hover:border-primary-container/40 transition-all duration-500">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h3 class="font-headline-lg text-xl">Senior Product Designer &amp; Business Analyst</h3>
+<span class="text-xs font-label-sm uppercase tracking-widest text-primary-fixed bg-primary-fixed/10 px-3 py-1 rounded-full">Aug 2022 — Present</span>
+</div>
+<p class="text-primary-container font-medium">Intech Creative Services Pvt. Ltd. · Pune</p>
+<p class="text-sm text-on-surface-variant">Client: <strong class="text-white">DP World</strong> — Global Supply Chain &amp; Logistics</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Led product discovery workshops, UX strategy, and end-to-end design for 6+ enterprise logistics modules. Authored SRS/BRD documentation and scaled a token-driven Figma design system (200+ components).</p>
+</div>
+</article>
+<article class="relative">
+<span class="journey-dot absolute -left-10 top-2 w-6 h-6 rounded-full bg-secondary-fixed border-2 border-[#050505]"></span>
+<div class="glass-card p-8 rounded-2xl space-y-3 hover:border-secondary-fixed/40 transition-all duration-500">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h3 class="font-headline-lg text-xl">UI/UX Designer &amp; Requirements Analyst</h3>
+<span class="text-xs font-label-sm uppercase tracking-widest text-secondary-fixed bg-secondary-fixed/10 px-3 py-1 rounded-full">Oct 2019 — Aug 2022</span>
+</div>
+<p class="text-secondary-fixed font-medium">Kerv Digital · Bangalore</p>
+<p class="text-sm text-on-surface-variant">Client: <strong class="text-white">UK Government Digital Services (GDS)</strong></p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Designed GDS-compliant digital services, produced user stories and acceptance criteria, and ran moderated usability testing to reduce post-launch support tickets.</p>
+</div>
+</article>
+<article class="relative">
+<span class="journey-dot absolute -left-10 top-2 w-6 h-6 rounded-full bg-tertiary-fixed-dim border-2 border-[#050505]"></span>
+<div class="glass-card p-8 rounded-2xl space-y-3 hover:border-tertiary-fixed-dim/40 transition-all duration-500">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h3 class="font-headline-lg text-xl">UI/UX Designer</h3>
+<span class="text-xs font-label-sm uppercase tracking-widest text-tertiary-fixed-dim bg-white/5 px-3 py-1 rounded-full">Nov 2016 — Feb 2019</span>
+</div>
+<p class="text-tertiary-fixed-dim font-medium">Spadeworx Software Solutions · Pune</p>
+<p class="text-sm text-on-surface-variant">Clients: <strong class="text-white">Unilever</strong>, <strong class="text-white">Sun Pharma</strong>, Aditya Birla Foundation</p>
+<p class="text-on-surface-variant text-sm leading-relaxed">Delivered SharePoint portals, Power Apps interfaces, and high-fidelity UI for FMCG and pharma enterprise workflows with reusable pattern libraries across engagements.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 relative overflow-hidden reveal" id="contact">
+<!-- Animated Node Background Effect -->
+<div class="absolute top-0 right-0 w-full h-full opacity-30 pointer-events-none">
+<canvas class="w-full h-full" id="flow-canvas"></canvas>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="space-y-8 relative z-10">
+<h2 class="font-headline-xl text-headline-xl">Let's Build the <br/><span class="text-primary-container italic">Next Horizon.</span></h2>
+<p class="text-on-surface-variant font-body-lg">Have a vision that needs an expert eye? Reach out and let's discuss how we can scale your product's intelligence.</p>
+<div class="space-y-6 pt-4">
+<div class="flex items-center space-x-6">
+<div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed">mail</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Email me</p>
+<p class="font-bold text-lg">shreyas.shreyas.bhave@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center space-x-6">
+<div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-fixed">location_on</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Global Base</p>
+<p class="font-bold text-lg">Pune, Maharashtra, India</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-card p-12 rounded-[3rem] relative z-10">
+<form id="contact-form" class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-sm uppercase tracking-widest text-on-surface-variant ml-4" for="contact-name">Full Name</label>
+<input id="contact-name" name="name" class="w-full bg-black border border-white/10 rounded-2xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all text-white placeholder:text-white/20" placeholder="John Doe" type="text" required/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm uppercase tracking-widest text-on-surface-variant ml-4" for="contact-email">Email Address</label>
+<input id="contact-email" name="email" class="w-full bg-black border border-white/10 rounded-2xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all text-white placeholder:text-white/20" placeholder="john@company.com" type="email" required/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm uppercase tracking-widest text-on-surface-variant ml-4" for="contact-scope">Project Scope</label>
+<textarea id="contact-scope" name="scope" class="w-full bg-black border border-white/10 rounded-2xl px-6 py-4 focus:border-primary-container focus:ring-0 transition-all text-white placeholder:text-white/20" placeholder="Tell me about your project..." rows="4" required></textarea>
+</div>
+<div id="contact-form-status" class="text-sm text-on-surface-variant"></div>
+<button class="w-full bg-primary-container text-black font-bold py-5 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 glow-hover shadow-2xl flex items-center justify-center space-x-3" type="submit">
+<span>Initialize Project</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-32 reveal border-t border-white/5" id="testimonials">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="space-y-4 max-w-xl">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim uppercase tracking-[0.3em]">Client Voices</span>
+<h2 class="font-headline-xl text-headline-xl">What Leaders <span class="text-primary-container">Say</span></h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center hover:bg-primary-container hover:text-black hover:border-primary-container transition-all magnetic-pull" id="testimonial-prev" type="button" aria-label="Previous testimonials"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-12 h-12 rounded-full border border-white/15 flex items-center justify-center hover:bg-primary-container hover:text-black hover:border-primary-container transition-all magnetic-pull" id="testimonial-next" type="button" aria-label="Next testimonials"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="testimonial-viewport">
+<div class="testimonial-track" id="testimonial-track">
+<div class="testimonial-slide">
+<article class="testimonial-card rounded-3xl p-8 space-y-5">
+<span class="material-symbols-outlined text-primary-container text-4xl">format_quote</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">Shreyas translated our complex logistics workflows into an intuitive platform. His discovery rigor and design system discipline accelerated delivery across multiple modules.</p>
+<div class="pt-4 border-t border-white/10">
+<p class="font-bold text-white">Rajesh Mehta</p>
+<p class="text-sm text-primary-fixed">Head of Product · DP World</p>
+<p class="text-xs text-on-surface-variant mt-1">DP World</p>
+</div>
+</article>
+</div>
+<div class="testimonial-slide">
+<article class="testimonial-card rounded-3xl p-8 space-y-5">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">format_quote</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">He bridges business analysis and UX with rare clarity. Requirements were documented precisely, and stakeholder sign-off became significantly faster on every sprint.</p>
+<div class="pt-4 border-t border-white/10">
+<p class="font-bold text-white">Priya Nair</p>
+<p class="text-sm text-secondary-fixed">Delivery Director · Enterprise SaaS</p>
+<p class="text-xs text-on-surface-variant mt-1">Intech Creative Services</p>
+</div>
+</article>
+</div>
+<div class="testimonial-slide">
+<article class="testimonial-card rounded-3xl p-8 space-y-5">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl">format_quote</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">Our GDS-aligned services improved measurably after his redesigns. Usability findings were actionable, and the handoff quality to engineering was consistently excellent.</p>
+<div class="pt-4 border-t border-white/10">
+<p class="font-bold text-white">James Whitfield</p>
+<p class="text-sm text-primary-fixed-dim">Product Owner · UK Government Digital Services</p>
+<p class="text-xs text-on-surface-variant mt-1">Kerv Digital / GDS</p>
+</div>
+</article>
+</div>
+<div class="testimonial-slide">
+<article class="testimonial-card rounded-3xl p-8 space-y-5">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-4xl">format_quote</span>
+<p class="text-on-surface-variant text-sm leading-relaxed">From SharePoint portals to customer-facing UI, Shreyas elevated our enterprise brand experience while keeping teams aligned through structured workshops and clear specs.</p>
+<div class="pt-4 border-t border-white/10">
+<p class="font-bold text-white">Anita Deshpande</p>
+<p class="text-sm text-tertiary-fixed-dim">Program Manager · FMCG Digital</p>
+<p class="text-xs text-on-surface-variant mt-1">Unilever Engagement</p>
+</div>
+</article>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-2 mt-8" id="testimonial-dots"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-32 border-t border-surface-variant bg-background relative z-10" id="footer">
+<div class="max-w-max-width mx-auto px-margin-desktop grid grid-cols-12 gap-gutter relative z-20">
+<div class="col-span-12 lg:col-span-6 space-y-6">
+<div class="font-headline-lg text-headline-lg text-primary">SHREYAS BHAVE</div>
+<p class="text-on-surface-variant max-w-sm">Lead Product Designer &amp; Business Consultant — AI-first design for enterprise SaaS, logistics, and B2B platforms.</p>
+<p class="font-body-md text-body-md text-secondary-fixed">© 2026 Shreyas Bhave. Pune, India.</p>
+</div>
+<div class="col-span-12 lg:col-span-3 space-y-4">
+<h6 class="font-label-md text-label-md text-white">Socials</h6>
+<div class="flex flex-col space-y-2">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="https://linkedin.com/in/shreyas-bhave-61399a31" target="_blank" rel="noopener">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="https://behance.net/shreyasshr276d" target="_blank" rel="noopener">Behance</a>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-3 space-y-4">
+<h6 class="font-label-md text-label-md text-white">Contact</h6>
+<div class="flex flex-col space-y-2">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="mailto:shreyas.shreyas.bhave@gmail.com">Email</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-all" href="#">Calendar</a>
+</div>
+</div>
+    <div class="footer-slideshow" aria-hidden="true">
+        <img src="shreyas.png" alt="" />
+    </div>
+</div>
+</footer>
+<!-- Video Modal -->
+<div class="fixed inset-0 bg-black/90 backdrop-blur-2xl z-[100] hidden items-center justify-center p-4" id="video-modal">
+<button class="absolute top-8 right-8 text-white p-4 hover:bg-white/10 rounded-full transition-all" onclick="closeVideoModal()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<div class="w-full max-w-6xl aspect-video glass-card border-white/20 rounded-[3rem] overflow-hidden relative bg-black">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full" frameborder="0" id="demo-video-player" src="" title="Design Philosophy Demo"></iframe>
+</div>
+</div>
+<button aria-label="Go to top" class="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-2xl glow-hover magnetic-pull" id="back-to-top" onclick="scrollToTop()" type="button">
+<span class="material-symbols-outlined text-2xl">keyboard_arrow_up</span>
+</button>
+<script>
+        const DEMO_VIDEO_URL = 'https://www.youtube.com/embed/2B5LMgK8wOo?rel=0';
+        const RING_CIRCUMFERENCE = 364;
+        let skillsAnimated = false;
+
+        function openVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const player = document.getElementById('demo-video-player');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            if (player) player.src = DEMO_VIDEO_URL;
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const player = document.getElementById('demo-video-player');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+            if (player) player.src = '';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function animateSkillRings(section) {
+            if (skillsAnimated) return;
+            skillsAnimated = true;
+
+            section.querySelectorAll('.skill-ring').forEach(ring => {
+                const percent = parseInt(ring.dataset.percent, 10);
+                const offset = RING_CIRCUMFERENCE * (1 - percent / 100);
+                requestAnimationFrame(() => {
+                    ring.style.strokeDashoffset = String(offset);
+                });
+            });
+
+            section.querySelectorAll('.skill-percent').forEach(label => {
+                const target = parseInt(label.dataset.target, 10);
+                const duration = 1500;
+                const start = performance.now();
+
+                function tick(now) {
+                    const progress = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    label.textContent = Math.round(target * eased);
+                    if (progress < 1) requestAnimationFrame(tick);
+                }
+
+                requestAnimationFrame(tick);
+            });
+        }
+
+        function setActiveNav(sectionId) {
+            const nav = document.getElementById('main-nav');
+            const indicator = document.getElementById('nav-indicator');
+            let activeLink = null;
+
+            document.querySelectorAll('#main-nav .nav-link, #mobile-nav .nav-link').forEach(link => {
+                const isActive = link.dataset.section === sectionId;
+                link.classList.toggle('active', isActive);
+                link.setAttribute('aria-current', isActive ? 'page' : 'false');
+                if (isActive && nav && nav.contains(link)) activeLink = link;
+            });
+
+            if (indicator && activeLink && nav) {
+                const navRect = nav.getBoundingClientRect();
+                const linkRect = activeLink.getBoundingClientRect();
+                indicator.style.width = linkRect.width + 'px';
+                indicator.style.transform = 'translateY(-50%) translateX(' + (linkRect.left - navRect.left) + 'px)';
+            }
+        }
+
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', e => {
+                    const targetId = anchor.getAttribute('href');
+                    if (!targetId || targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (!target) return;
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (anchor.dataset.section) setActiveNav(anchor.dataset.section);
+                });
+            });
+        }
+
+        function initScrollSpy() {
+            const sections = ['hero', 'vision', 'strategist', 'gallery', 'technical-sovereignty', 'clients', 'journey', 'why-me', 'contact', 'testimonials', 'footer']
+                .map(id => document.getElementById(id))
+                .filter(Boolean);
+
+            const spyObserver = new IntersectionObserver(entries => {
+                const visible = entries
+                    .filter(entry => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+                if (visible) setActiveNav(visible.target.id);
+            }, { rootMargin: '-40% 0px -45% 0px', threshold: [0.1, 0.35, 0.6] });
+
+            sections.forEach(section => spyObserver.observe(section));
+        }
+
+        function initRevealAndSkills() {
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    if (entry.target.id === 'technical-sovereignty') {
+                        animateSkillRings(entry.target);
+                    }
+                });
+            }, { threshold: 0.2, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal, #hero').forEach(el => revealObserver.observe(el));
+        }
+
+        function initBackToTop() {
+            const backToTop = document.getElementById('back-to-top');
+            const footer = document.getElementById('footer');
+            if (!backToTop || !footer) return;
+
+            const footerObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    backToTop.classList.toggle('visible', entry.isIntersecting);
+                });
+            }, { threshold: 0.15 });
+
+            footerObserver.observe(footer);
+        }
+
+        function setGalleryFilterActive(activeBtn) {
+            document.querySelectorAll('.gallery-filter').forEach(btn => {
+                const isActive = btn === activeBtn;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+        }
+
+        function initGalleryFilters() {
+            const grid = document.getElementById('gallery-grid');
+            const filters = document.querySelectorAll('.gallery-filter');
+            const items = Array.from(document.querySelectorAll('.gallery-item'));
+            if (!grid || !filters.length || !items.length) return;
+
+            const LEAVE_MS = 580;
+            let filterLock = false;
+
+            function applyFilter(filter) {
+                if (filterLock) return;
+                filterLock = true;
+                grid.classList.add('is-filtering');
+
+                const toShow = [];
+                const toHide = [];
+
+                items.forEach(item => {
+                    const categories = item.dataset.category ? item.dataset.category.split(/\s+/) : [];
+                    const match = filter === 'all' || categories.includes(filter);
+                    const hidden = item.classList.contains('is-hidden');
+                    if (match && hidden) toShow.push(item);
+                    else if (!match && !hidden) toHide.push(item);
+                });
+
+                toHide.forEach((item, i) => {
+                    item.style.transitionDelay = (i * 45) + 'ms';
+                    item.classList.remove('is-visible', 'is-entering');
+                    item.classList.add('is-leaving');
+                });
+
+                const finishHide = () => {
+                    toHide.forEach(item => {
+                        item.classList.remove('is-leaving');
+                        item.classList.add('is-hidden');
+                        item.style.transitionDelay = '';
+                    });
+
+                    toShow.forEach((item, i) => {
+                        item.classList.remove('is-hidden', 'is-leaving');
+                        item.classList.add('is-entering');
+                        item.style.transitionDelay = (i * 80) + 'ms';
+                    });
+
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            toShow.forEach(item => {
+                                item.classList.remove('is-entering');
+                                item.classList.add('is-visible');
+                            });
+                            grid.classList.remove('is-filtering');
+                            filterLock = false;
+                        });
+                    });
+                };
+
+                if (toHide.length) {
+                    window.setTimeout(finishHide, LEAVE_MS);
+                } else {
+                    finishHide();
+                }
+            }
+
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (btn.classList.contains('active')) return;
+                    setGalleryFilterActive(btn);
+                    applyFilter(btn.dataset.filter);
+                });
+            });
+
+            items.forEach(item => item.classList.add('is-visible'));
+        }
+
+        document.querySelectorAll('.magnetic-pull').forEach(el => {
+            el.addEventListener('mousemove', e => {
+                const rect = el.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        document.getElementById('video-modal')?.addEventListener('click', e => {
+            if (e.target.id === 'video-modal') closeVideoModal();
+        });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeVideoModal();
+        });
+
+        initSmoothScroll();
+        initScrollSpy();
+        initRevealAndSkills();
+        initBackToTop();
+        initGalleryFilters();
+        activateGalleryFilterFromQuery();
+        initInquiryForm();
+        initTestimonialCarousel();
+        initMobileMenu();
+        setActiveNav('hero');
+        window.addEventListener('resize', () => {
+            const active = document.querySelector('#main-nav .nav-link.active');
+            if (active) setActiveNav(active.dataset.section);
+        });
+
+        function activateGalleryFilterFromQuery() {
+            const params = new URLSearchParams(window.location.search);
+            const filter = params.get('filter');
+            if (!filter) return;
+            const button = document.querySelector(`.gallery-filter[data-filter="${filter}"]`);
+            if (button) button.click();
+        }
+
+        function initInquiryForm() {
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('contact-form-status');
+            if (!form || !status) return;
+
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                const name = form.querySelector('[name="name"]').value.trim();
+                const email = form.querySelector('[name="email"]').value.trim();
+                const scope = form.querySelector('[name="scope"]').value.trim();
+
+                if (!name || !email || !scope) {
+                    status.textContent = 'Please complete all fields before sending.';
+                    status.className = 'text-sm text-[#ffb4ab]';
+                    return;
+                }
+
+                const subject = encodeURIComponent(`Design Inquiry from ${name}`);
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject Scope:\n${scope}\n\nSent via portfolio contact form.`);
+                window.location.href = `mailto:shreyas.shreyas.bhave@gmail.com?subject=${subject}&body=${body}`;
+                status.textContent = 'Opening your email app to send the inquiry.';
+                status.className = 'text-sm text-primary-container';
+            });
+        }
+
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const nav = document.getElementById('mobile-nav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', () => {
+                nav.classList.toggle('hidden');
+                nav.classList.toggle('flex');
+            });
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.add('hidden');
+                    nav.classList.remove('flex');
+                });
+            });
+        }
+
+        function initTestimonialCarousel() {
+            const track = document.getElementById('testimonial-track');
+            const prev = document.getElementById('testimonial-prev');
+            const next = document.getElementById('testimonial-next');
+            const dotsWrap = document.getElementById('testimonial-dots');
+            if (!track || !prev || !next) return;
+
+            const slides = track.querySelectorAll('.testimonial-slide');
+            let index = 0;
+
+            function slidesPerView() {
+                if (window.innerWidth >= 1280) return Math.min(4, slides.length);
+                if (window.innerWidth >= 768) return Math.min(2, slides.length);
+                return 1;
+            }
+
+            function maxIndex() {
+                return Math.max(0, slides.length - slidesPerView());
+            }
+
+            function renderDots() {
+                if (!dotsWrap) return;
+                dotsWrap.innerHTML = '';
+                const pages = maxIndex() + 1;
+                for (let i = 0; i < pages; i++) {
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.className = 'w-2.5 h-2.5 rounded-full transition-all ' + (i === index ? 'bg-primary-container w-8' : 'bg-white/20');
+                    dot.setAttribute('aria-label', 'Go to testimonial page ' + (i + 1));
+                    dot.addEventListener('click', () => { index = i; update(); });
+                    dotsWrap.appendChild(dot);
+                }
+            }
+
+            function update() {
+                const spv = slidesPerView();
+                index = Math.min(index, maxIndex());
+                track.style.transform = 'translateX(-' + (index * (100 / spv)) + '%)';
+                renderDots();
+            }
+
+            prev.addEventListener('click', () => {
+                index = index <= 0 ? maxIndex() : index - 1;
+                update();
+            });
+            next.addEventListener('click', () => {
+                index = index >= maxIndex() ? 0 : index + 1;
+                update();
+            });
+
+            window.addEventListener('resize', update);
+            update();
+        }
+
+        // Atmospheric Canvas Animation
+        const canvas = document.getElementById('flow-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            function resize() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.init();
+                }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.vx = Math.random() * 0.5 - 0.25;
+                    this.vy = Math.random() * 0.5 - 0.25;
+                    this.life = Math.random() * 0.5 + 0.5;
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(184, 211, 0, ${this.life * 0.5})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+            }
+
+            for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                
+                // Draw connecting lines
+                ctx.strokeStyle = 'rgba(184, 211, 0, 0.05)';
+                ctx.lineWidth = 0.5;
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (dist < 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+</body></html>
